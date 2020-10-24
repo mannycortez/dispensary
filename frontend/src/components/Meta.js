@@ -12,8 +12,8 @@ const Meta = ({ title, description, keywords}) => {
 }
 
 Meta.defaultProps = {
-    title: "Welcome to Manny's Shop",
-    description: "I make the best websites, apps and paintings",
+    title: "Welcome to Magic Flowers",
+    description: "The best flowers in San Francisco",
     keywords: 'art, design, code'
 }
 
