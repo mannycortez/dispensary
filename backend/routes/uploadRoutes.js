@@ -1,8 +1,17 @@
 import path from 'path'
 import express from 'express'
 import multer from 'multer'
+import cloud from 'cloudinary'
+
+const cloudinary = cloud
 
 const router = express.Router()
+
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUD_API_KEY,
+    api_secret: process.env.CLOUD_API_SECRET
+})
 
 const storage = multer.diskStorage({
     destination(req, file, cb) {
@@ -32,8 +41,11 @@ const upload = multer({
     }
 })
 
-router.post('/', upload.single('image'), (req, res) => {
-    res.send(`/${req.file.path}`)
+router.post('/', upload.single('image'), async(req, res) => {
+    const uploadPhoto = await cloud.uploader.upload(`${req.file.path}`)
+    console.log(uploadPhoto)
+    console.log(uploadPhoto.url)
+    res.send(uploadPhoto.url)
 })
 
 export default router
