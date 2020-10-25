@@ -31,7 +31,9 @@ const HomeScreen = ({ match }) => {
       {!keyword ? <ProductCarousel /> : <Link to='/' className='btn btn-light'>
         Go Back
         </Link>}
-          <h1>Fresh Flowers</h1>
+        <br/>
+          <h1 style={{'textAlign': 'center'}}>Fresh Flowers</h1>
+          <p style={{'textAlign': 'center'}}>Locally grown and trimmed in Northern Cali.</p>
             {loading ? (
               <Loader />
             ) : error ? (
