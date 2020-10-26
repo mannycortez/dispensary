@@ -21,9 +21,9 @@ const PlaceOrderScreen = ({history}) => {
 
     cart.itemsPrice = addDecimals(cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0))
 
-    cart.shippingPrice = addDecimals(cart.itemsPrice > 100 ? 0 : 100)
+    cart.shippingPrice = addDecimals(cart.itemsPrice < 100 ? 0 : 8)
 
-    cart.taxPrice = addDecimals(Number((0.15 * cart.itemsPrice).toFixed(2)))
+    cart.taxPrice = addDecimals(Number((0.08 * cart.itemsPrice).toFixed(2)))
 
     cart.totalPrice = (Number(cart.itemsPrice) + Number(cart.shippingPrice) + Number(cart.taxPrice)).toFixed(2)
 
@@ -59,10 +59,10 @@ const PlaceOrderScreen = ({history}) => {
                         <ListGroup.Item>
                             <h2>Shipping</h2>
                               <p>
-                                <strong>Address:</strong>
-                                {cart.shippingAddress.address}, 
-                                {cart.shippingAddress.city}{' '} 
-                                {cart.shippingAddress.postalCode},{' '} 
+                                <strong>Address: </strong>
+                                {cart.shippingAddress.address}{' '}~{' '} 
+                                {cart.shippingAddress.city}{' '}~{' '} 
+                                {cart.shippingAddress.postalCode}{' '}~{' '} 
                                 {cart.shippingAddress.country}
                               </p>
                         </ListGroup.Item>
@@ -148,7 +148,8 @@ const PlaceOrderScreen = ({history}) => {
                                 <Button type='button'
                                         className='btn-block'
                                         disabled={cart.cartItems === 0}
-                                        onClick={placeOrderHandler}> Place Order </Button>
+                                        onClick={placeOrderHandler}
+                                        style={{backgroundColor: 'green'}}> Continue to Payment </Button>
                             </ListGroup.Item>
                         </ListGroup>
                     </Card>
