@@ -1,7 +1,7 @@
 {
-  "name": "mcs-store",
+  "name": "dispensary",
   "version": "1.0.0",
-  "description": "MERN Store",
+  "description": "dispensary",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mannycortez/mcs-store.git"
+    "url": "git+https://github.com/mannycortez/dispensary.git"
   },
   "author": "Manny Cortez Studios LLC",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mannycortez/mcs-store/issues"
+    "url": "https://github.com/mannycortez/dispensary/issues"
   },
-  "homepage": "https://github.com/mannycortez/mcs-store#readme",
+  "homepage": "https://github.com/mannycortez/dispensary#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.23.0",
