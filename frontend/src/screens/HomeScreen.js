@@ -33,7 +33,11 @@ const HomeScreen = ({ match }) => {
         </Link>}
         <br/>
           <h1 style={{'textAlign': 'center'}}>Fresh Flowers</h1>
-          <p style={{'textAlign': 'center'}}>Locally grown and trimmed in Northern Cali.</p>
+          <p style={{'textAlign': 'center'}}>This online shop is built with MongoDB, Express, React and Node. 
+          This app allows customers to place orders and create a profile. 
+          It has a basic inventory system to keep orders organized 
+          and can be connected to a payment gateway such as PayPal or any platform you choose. 
+          This online store can be fully customized to accomodate retailers to sell 'B to B' or 'B to C'. </p>
             {loading ? (
               <Loader />
             ) : error ? (
